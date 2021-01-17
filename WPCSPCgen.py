@@ -3,7 +3,7 @@ from z3 import*
 
 #############################################################################################################
 #																											#
-#													Lógica												    #
+#													Logica												    #
 #																											#
 #############################################################################################################
 
@@ -137,7 +137,7 @@ def SPCstraux(inst):
 		lef = SPCstraux(inst[:-1] + pars[0])
 		rig = SPCstraux(inst[:-1] + pars[1])
 
-		rst = f"({lef[0]}) ∨ ({rig[0]})\n"
+		rst = f"({lef[0]}) V ({rig[0]})\n"
 
 		return rst,True
 
@@ -493,20 +493,20 @@ def proveUnfold():
 
 
 # tudo com 16 bits 
-print(FLOW(havoc))
-print(WPCstr(havoc))
+#print(FLOW(havoc))
+#print(WPCstr(havoc))
 
-logic = WPC(havoc)
+#logic = WPC(havoc)
 
-prove(logic)
+#prove(logic)
 
-unfold5 = unfold(5)
+unfold16 = unfold(16)
 
-print(FLOW(unfold5))
-print(SPCstr(unfold5))
-logic = SPC(unfold5)
+print(FLOW(unfold16))
+#print(SPCstr(unfold5))
+#logic = SPC(unfold5)
 
-prove(logic)
+#prove(logic)
 
-proveUnfold()
+#proveUnfold()
 
